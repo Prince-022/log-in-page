@@ -2,16 +2,78 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Fill the form page!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill the Form Page!</title>
     <style>
         body {
             background-color: black;
             color: white;
             text-align: center;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
+
+        header, main, footer {
+            padding: 20px;
+        }
+
+        form {
+            display: inline-block;
+            text-align: left;
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        select,
         textarea {
-            resize: none;
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: none;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        iframe {
+            margin-top: 30px;
+        }
+
+        .contact-info {
+            text-align: left;
+            display: inline-block;
+            background-color: #111;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        img {
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -19,31 +81,28 @@
 
     <header>
         <h1><i>Fill All Your Details To Continue:</i></h1>
+        <img src="https://designguruji.in/wp-content/uploads/2020/07/mahakal16-169x300.jpg" 
+             alt="Mahakal Image" height="200">
     </header>
-
-    <img src="https://designguruji.in/wp-content/uploads/2020/07/mahakal16-169x300.jpg" 
-         alt="Fill that form" height="200">
 
     <main>
         <form action="/retry.html" method="post">
-            <h4>Enter your ID here:</h4>
-            <input type="text" name="user_id" placeholder="Enter your ID" required>
+            <label for="user_id">Enter your ID:</label>
+            <input type="text" id="user_id" name="user_id" placeholder="Enter your ID" required>
 
-            <h4>Enter your password here:</h4>
-            <input type="password" name="password" placeholder="Enter your Password" required>
+            <label for="password">Enter your Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your Password" required>
 
-            <br><br>
+            <label>Do you like our page?</label>
+            <input type="radio" id="like" name="page_opinion" value="like" required>
+            <label for="like">Yes</label>
 
-            <label>
-                <input type="radio" name="page_opinion" value="dislike"> Don't you like our page
-            </label><br>
+            <input type="radio" id="dislike" name="page_opinion" value="dislike">
+            <label for="dislike">No</label>
 
-            <label>
-                <input type="radio" name="page_opinion" value="like"> Do you like our page
-            </label><br>
-
-            <h5>Select your region:</h5>
-            <select name="city_selection" required>
+            <label for="city_selection">Select your region:</label>
+            <select id="city_selection" name="city_selection" required>
+                <option value="">--Select--</option>
                 <option value="Badhani">Badhani</option>
                 <option value="Himachal">Himachal</option>
                 <option value="Punjab">Punjab</option>
@@ -52,18 +111,14 @@
                 <option value="Haryana">Haryana</option>
             </select>
 
-            <br><br>
+            <label for="feedback">Any recommendations?</label>
+            <textarea id="feedback" name="feedback" rows="5" placeholder="Your suggestions..."></textarea>
 
-            <b><big>If you have any kind of suggestions, please give us:</big></b><br>
-            <textarea name="feedback" cols="30" rows="5" placeholder="Any Recommendations"></textarea>
-
-            <br><br>
             <input type="submit" value="Submit">
         </form>
 
-        <br>
-        <h3>If you are getting bored, then view this:</h3>
-        <iframe height="200" 
+        <h3>If you are getting bored, check this out:</h3>
+        <iframe width="360" height="200" 
                 src="https://www.youtube.com/embed/DPjPcxp_dWs?si=re0QJUfXVfsYHyrY" 
                 title="YouTube video player"
                 frameborder="0" 
@@ -72,17 +127,14 @@
         </iframe>
     </main>
 
-    <hr>
-
     <footer>
-        <h3>Thank you for visiting our page. If you have any query, contact us at:</h3>
-        <hr>
-        <pre>
-Gmail:          Hehe@gmail.com
-Facebook ID:    Hehe_the_page001
-Instagram ID:   Hehe_the_page001
-Snapchat ID:    Hehe_the_page001
-        </pre>
+        <h3>Thank you for visiting our page. If you have any queries, contact us at:</h3>
+        <div class="contact-info">
+            <p><strong>Gmail:</strong> Hehe@gmail.com</p>
+            <p><strong>Facebook ID:</strong> Hehe_the_page001</p>
+            <p><strong>Instagram ID:</strong> Hehe_the_page001</p>
+            <p><strong>Snapchat ID:</strong> Hehe_the_page001</p>
+        </div>
     </footer>
 
 </body>
